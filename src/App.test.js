@@ -3,7 +3,6 @@ import Enzyme, { shallow } from 'enzyme';
 import EnzymeAdapter from 'enzyme-adapter-react-16';
 
 import App from './App';
-import { wrap } from 'module';
 
 Enzyme.configure({ adapter: new EnzymeAdapter() });
 
@@ -73,6 +72,30 @@ test('counter cannot get bellow zero', () => {
   button.simulate('click');
 
   const counterDisplay = findByTestAttr(wrapper, 'counter-display');
+
   expect(counterDisplay.text()).toContain(0);
 });
 
+test('shows the error message', () => {
+  const error = '';
+  const wrapper = setup(null, { error });
+
+  const button = findByTestAttr(wrapper, 'decrement-button');
+
+  button.simulate('click');
+
+  const errorDisplay = findByTestAttr(wrapper, 'error-message');
+  expect(errorDisplay.text()).toContain('The counter cannot go bellow zero!');
+});
+
+test('remove the error message', () => {
+  const error = 'The counter cannot go bellow zero!';
+  const wrapper = setup(null, { error });
+
+  const button = findByTestAttr(wrapper, 'increment-button');
+
+  button.simulate('click');
+
+  const errorDisplay = findByTestAttr(wrapper, 'error-message');
+  expect(errorDisplay.text()).toContain('');
+});

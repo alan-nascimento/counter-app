@@ -42,6 +42,12 @@ button:hover {
   opacity: 0.8;
 }
 
+small {
+  margin-top: 10px;
+  color: #d6533f;
+  font-size: 16px;
+}
+
 .App {
   height: 100%;
   display: flex;

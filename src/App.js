@@ -5,21 +5,37 @@ import './App.css';
 export default class App extends Component {
   state = {
     counter: 0,
+    error: '',
   }
 
-  handleIncrement = () => this.setState({ counter: this.state.counter + 1 });
+  handleIncrement = () => {
+    if (this.state.error) {
+      this.setState({ error: '' });
+    }
 
-  handleDecrement = () => !!this.state.counter && this.setState({ counter: this.state.counter - 1 });
+    this.setState({ counter: this.state.counter + 1 });
+  }
+
+  handleDecrement = () => {
+    if (!this.state.counter) {
+      return this.setState({ error: 'The counter cannot go bellow zero!' });
+    }
+    
+    this.setState({ counter: this.state.counter - 1 });
+  };
 
   render() {
+    const { counter, error } = this.state;
+
     return (
       <div className="App" data-test="component-app">
         <h1 data-test="counter-display">
-          The counter is currently {this.state.counter}
+          The counter is currently {counter}
         </h1>
+        <small data-test="error-message">{error}</small>
         <div>
           <button 
-            data-test="increment-button" 
+            data-test="increment-button"
             onClick={this.handleIncrement}
           >
             Increment
