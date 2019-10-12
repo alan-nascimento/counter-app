@@ -3,6 +3,10 @@ import React, { Component } from 'react';
 import './App.css';
 
 export default class App extends Component {
+  state = {
+    counter: 0
+  }
+
   render() {
     return (
       <div className="App" data-test="component-app">

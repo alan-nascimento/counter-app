@@ -5,10 +5,7 @@
         [
           "react-remove-properties",
           {
-            "properties": [
-              "data-test",
-              "data-foo",
-            ]
+            "properties": ["data-test", "data-foo"]
           }
         ]
       ]
