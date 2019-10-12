@@ -3,6 +3,7 @@ import Enzyme, { shallow } from 'enzyme';
 import EnzymeAdapter from 'enzyme-adapter-react-16';
 
 import App from './App';
+import { wrap } from 'module';
 
 Enzyme.configure({ adapter: new EnzymeAdapter() });
 
@@ -32,6 +33,13 @@ test('renders increment button', () => {
   expect(button.length).toBe(1);
 });
 
+test('renders decrement button', () => {
+  const wrapper = setup();
+  const button = findByTestAttr(wrapper, 'decrement-button');
+
+  expect(button.length).toBe(1);
+})
+
 test('renders the counter display', () => {
   const wrapper = setup();
   const counterDisplay = findByTestAttr(wrapper, 'counter-display');
@@ -55,5 +63,16 @@ test('clicking button increments counter display', () => {
 
   const counterDisplay = findByTestAttr(wrapper, 'counter-display');
   expect(counterDisplay.text()).toContain(counter + 1);
+});
+
+test('counter cannot get bellow zero', () => {
+  const counter = 0;
+  const wrapper = setup(null, { counter });
+  const button = findByTestAttr(wrapper, 'decrement-button');
+
+  button.simulate('click');
+
+  const counterDisplay = findByTestAttr(wrapper, 'counter-display');
+  expect(counterDisplay.text()).toContain(0);
 });
 
