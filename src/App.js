@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './app.css';
+import './App.css';
 
 export default class App extends Component {
   state = {
@@ -18,7 +18,7 @@ export default class App extends Component {
 
   handleDecrement = () => {
     if (!this.state.counter) {
-      return this.setState({ error: 'The counter cannot go bellow zero!' });
+      return this.setState({ error: 'The counter can\'t go bellow zero!' });
     }
     
     this.setState({ counter: this.state.counter - 1 });
@@ -28,7 +28,7 @@ export default class App extends Component {
     const { counter, error } = this.state;
 
     return (
-      <div className="app" data-test="component-app">
+      <div className="App" data-test="component-app">
         <h1 data-test="counter-display">
           The counter is currently {counter}
         </h1>
