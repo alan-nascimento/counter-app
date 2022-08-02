@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './App.css';
+import './app.css';
 
 export default class App extends Component {
   state = {
@@ -28,7 +28,7 @@ export default class App extends Component {
     const { counter, error } = this.state;
 
     return (
-      <div className="App" data-test="component-app">
+      <div className="app" data-test="component-app">
         <h1 data-test="counter-display">
           The counter is currently {counter}
         </h1>
