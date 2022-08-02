@@ -15,13 +15,13 @@ git clone https://github.com/alan-nascimento/counter-app.git
 1. Install dependencies:
 
 ```bash
-yarn
+npm install
 ```
 
 2. Start the application:
 
 ```bash
-yarn start
+npm run start
 ```
 
 ### Libraries
@@ -36,13 +36,13 @@ yarn start
 1. Open a new terminal and run:
 
 ```bash
-yarn test
+npm run test
 ```
 
 2. To get coverage tests, run:
 
 ```bash
-yarn coverage
+npm run test:coverage
 ```
 
 3. Go to the project folder: `coverage/lcov-report`.
