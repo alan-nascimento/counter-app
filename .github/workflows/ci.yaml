@@ -16,6 +16,8 @@ jobs:
         run: npm install
       - name: Run unit tests
         run: npm run test:coverage
+      - name: Fix coverage report
+        run: sed -i "s+/home/runner/work/counter-app/counter-app/++g" coverage/lcov.info
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
