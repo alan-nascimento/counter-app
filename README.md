@@ -2,6 +2,8 @@
 
 Application to test the change of react component state as you click the increment and decrement counter button.
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=alan-nascimento_counter-app&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=alan-nascimento_counter-app)
+
 ## Starting
 
 Clone this repository:
