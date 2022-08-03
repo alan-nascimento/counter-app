@@ -22,9 +22,9 @@ test('renders without crashes', () => {
   const wrapper = setup();
   const appComponent = findByTestAttr(wrapper, 'component-app');
 
-  expect(appComponent.length).toBe(1);  
+  expect(appComponent.length).toBe(1);
 });
-  
+
 test('renders increment button', () => {
   const wrapper = setup();
   const button = findByTestAttr(wrapper, 'increment-button');
@@ -96,11 +96,11 @@ test('shows the error message', () => {
   button.simulate('click');
 
   const errorDisplay = findByTestAttr(wrapper, 'error-message');
-  expect(errorDisplay.text()).toContain('The counter cannot go bellow zero!');
+  expect(errorDisplay.text()).toContain('The counter can\'t go bellow zero!');
 });
 
 test('remove the error message', () => {
-  const error = 'The counter cannot go bellow zero!';
+  const error = 'The counter can\'t go bellow zero!';
   const wrapper = setup(null, { error });
 
   const button = findByTestAttr(wrapper, 'increment-button');
