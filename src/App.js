@@ -20,7 +20,7 @@ export default class App extends Component {
     if (!this.state.counter) {
       return this.setState({ error: 'The counter can\'t go bellow zero!' });
     }
-    
+
     this.setState({ counter: this.state.counter - 1 });
   };
 
@@ -34,7 +34,7 @@ export default class App extends Component {
         </h1>
         <small data-test="error-message">{error}</small>
         <div>
-          <button 
+          <button
             data-test="increment-button"
             onClick={this.handleIncrement}
           >

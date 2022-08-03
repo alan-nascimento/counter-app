@@ -22,9 +22,9 @@ test('renders without crashes', () => {
   const wrapper = setup();
   const appComponent = findByTestAttr(wrapper, 'component-app');
 
-  expect(appComponent.length).toBe(1);  
+  expect(appComponent.length).toBe(1);
 });
-  
+
 test('renders increment button', () => {
   const wrapper = setup();
   const button = findByTestAttr(wrapper, 'increment-button');
